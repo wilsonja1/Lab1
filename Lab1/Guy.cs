@@ -18,7 +18,7 @@ namespace Lab1
 
         public void UpdateLabels()
         {
-            MyLabel.Text = Name + " has " + Cash.ToString() + " bucks";
+            MyRadioButton.Text = Name + " has " + Cash.ToString() + " bucks";
         }
 
         public void ClearBet()
@@ -28,9 +28,11 @@ namespace Lab1
 
         public bool PlaceBet(int BetAmount, int DogToWin)
         {
-            MyBet = new Bet() { Amount = BetAmount, Dog = DogToWin};
-            if (BetAmount < Cash)
+            MyBet = new Bet() { Amount = BetAmount, Dog = DogToWin };
+            if (BetAmount < Cash) { 
+                MyLabel.Text = Name + " bet " + MyBet.Amount.ToString();
                 return true;
+            }
             else
                 return false;
         }
@@ -40,7 +42,6 @@ namespace Lab1
             Cash += MyBet.PayOut(winner);
             ClearBet();
             UpdateLabels();
-
         }
     }
 }
