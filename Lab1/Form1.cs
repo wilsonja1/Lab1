@@ -12,9 +12,17 @@ namespace Lab1
 {
     public partial class Form1 : Form
     {
+        Greyhound[] GreyhoundArray = new Greyhound[4];
         public Form1()
         {
             InitializeComponent();
+            /*GreyhoundArray[0] = new Greyhound()
+            {
+                MyPictureBox = PictureBox1,
+                StartingPosition = PictureBox1.Left,
+                RaceTrackLength = racetrackPictureBox.Width - pictureBox1.Width,
+                Randomizer = My
+            }*/
         }
     }
 }
